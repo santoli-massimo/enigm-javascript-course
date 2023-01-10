@@ -1,10 +1,11 @@
 
-prova - matteoB
-
+# enigm-javascript-course
 modificato readme
-prova
+# enigm-javascript-course FilDev0
 
+prova
 prova2
+
 prova 10 Harchaoui
 
 prova di karim
@@ -14,11 +15,6 @@ Prova hilgard
 
 modifiche di valentina 
 Pipp
-
-BUONAGGIORNATA a TUTTI
-Mannaggia a Git...Renato ;)
-
-
 
 
 
