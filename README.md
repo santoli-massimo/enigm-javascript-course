@@ -1,16 +1,4 @@
 
-prova - matteoB
-
-modificato readme
-prova
-
-prova2
-<<<<<<< HEAD
-<<<<<<< HEAD
-prova di karim
-prova 4
-prova di otman
-seconda prova
 
 
 
