@@ -1,7 +1,5 @@
 
-# enigm-javascript-course
 modificato readme
-# enigm-javascript-course FilDev0
 
 prova
 prova2
