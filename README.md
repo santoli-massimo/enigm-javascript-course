@@ -11,8 +11,12 @@ Prova hilgard
 modifiche di valentina 
 Pipp
 
+<<<<<<< HEAD
+BUONAGGIORNATA a TUTTI
+=======
 Mannaggia a Git...Renato ;)
 
+>>>>>>> 812acb05d64578b1cc200a2d1edcaebdc259b936
 
 
 
