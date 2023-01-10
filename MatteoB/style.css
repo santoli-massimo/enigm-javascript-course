@@ -1,0 +1,20 @@
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+h1:hover {
+    opacity: 0%;
+    transition: 2s;
+}
+
+.centro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+}
+
+
+
