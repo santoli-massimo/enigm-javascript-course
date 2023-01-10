@@ -1,0 +1,1 @@
+console.log("Lezione 2 JS")
