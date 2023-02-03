@@ -62,3 +62,18 @@ console.log(1 == "1")
 * NaN
 *
 *************************************************/
+
+
+// controllare se un numero è pari
+
+let numero = 10;
+
+if (numero % 2) {
+    console.log(numero + " è pari.")
+} else {
+    console.log(numero + " è dispari")
+}
+
+
+
+
