@@ -62,8 +62,10 @@ console.log(y)
 
 function carousel(immagini, id){
     let index = 1
+    let immagine = document.getElementById(id)
+    immagine.src = immagini[0]
+
     setInterval(function(){
-        let immagine = document.getElementById(id)
         if(index >= immagini.length) index = 0
         immagine.src = immagini[index]
         index++
