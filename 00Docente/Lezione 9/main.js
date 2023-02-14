@@ -22,38 +22,41 @@ console.log('Lezione 9')
 // logList() non logga niente
 
 function logList(list, order){
-
     for(let i=0; i<list.length; i++){
         console.log(list[i])
     }
 }
 
 
-// logList([1,2,3])
-
-
-
 // Creare un paragrafo con il testo 'Ciao Engim' ed inserirlo nel div con id uguale a 'hero'
-
-
 let container = document.getElementById('hero')
-if(container){
-    let par = document.createElement('p')
-    par.innerText = '3 Ciao Engim'
-    par.style.color = 'blue'
+let par = document.createElement('p')
+par.innerText = '4 Ciao Engim'
+par.style.color = 'blue'
+if(container){ container.prepend(par) }
 
-    container.prepend(par)
+// ESMPIO Clone
+let head = document.getElementById('header')
+let parClone = par.cloneNode(true)
+parClone.innerText = 'dopo'
+head.append(parClone)
 
-    console.log({container: container})
+// ESEMPIO prepend
+let parClone2 = par.cloneNode(true)
+parClone2.innerText = 'prima'
+head.prepend(parClone2)
 
-
-    let head = document.getElementById('header')
-    head.append(par)
-
-    let parClone = par.cloneNode(true)
-    head.append(parClone)
-
-}
-
-
+// ESERCIZIO
 // AL click sul bottone con id 'toggle' mostrare il div con id 'content'
+let tg = document.getElementById('toggle')
+let content = document.getElementById('content')
+
+tg.addEventListener('click', function(){
+    content.style.display = 'block'
+})
+
+// ESERCIZIO
+// continuazione dell'esercizio precedente.
+// al click sul bottone:
+// se div con id 'content'è nascosto mostrarlo
+// se è visibile naconderlo
