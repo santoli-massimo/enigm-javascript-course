@@ -30,3 +30,30 @@ function logList(list, order){
 
 
 // logList([1,2,3])
+
+
+
+// Creare un paragrafo con il testo 'Ciao Engim' ed inserirlo nel div con id uguale a 'hero'
+
+
+let container = document.getElementById('hero')
+if(container){
+    let par = document.createElement('p')
+    par.innerText = '3 Ciao Engim'
+    par.style.color = 'blue'
+
+    container.prepend(par)
+
+    console.log({container: container})
+
+
+    let head = document.getElementById('header')
+    head.append(par)
+
+    let parClone = par.cloneNode(true)
+    head.append(parClone)
+
+}
+
+
+// AL click sul bottone con id 'toggle' mostrare il div con id 'content'
