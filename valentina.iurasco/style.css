@@ -1,3 +1,16 @@
 h1{
     color: green;
 }
+
+.cards {
+    position: relative;
+    background-color: aqua;
+    height: 800px;
+}
+.cards.card{
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    background-color:blue;
+    z-index: 10020;
+}
