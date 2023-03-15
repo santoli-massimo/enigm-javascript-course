@@ -30,58 +30,42 @@ console.log("ENGIM FINAL TEST 2023");
 // Puoi ottenere punti anche se non completi al 100% una parte per cui consiglio di provare comunque.
 
 
-
-
-
+const container = document.getElementById('container');
 fetch('https://reqres.in/api/users')
-        .then((response)=>{
-            if(response.status < 205){return response.json()}
-            throw Error(response.statusText)
+    .then(response => response.json())
+    .then(data => {
+        const users = data.data;
+
+        //per ogni utente crea una card e aggiungila al contenitore
+        users.forEach(user=> {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const avatar = document.createElement('img');
+            avatar.src = user.avatar;
+            avatar.alt = `${user.first_name} ${user.last_name} avatar`;
+            card.appendChild(avatar);
+
+            const name = document.createElement('h1');
+            name.textContent = `${user.first_name} ${user.last_name}`;
+            card.appendChild(name);
+
+            const email = document.createElement('p');
+            email.textContent = user.email;
+            card.appendChild(email);
+
+            const contact = document.createElement('a')
+            contact.src= user.email;
+            contact.textContent=`contact`;
+            card.appendChild(contact);
+
+            container.appendChild(card);
+
+        });
 })
-.then((data)=>{
-    console.log(data)
-    let cont = document.getElementById('ot')
-    cont.style.display = 'flex'
-    
-    cont.style.justifyContent = 'center'
-    cont.style.textAlign = 'center'
+.catch (error=> {
+            console.log(error);
+        });
+  
 
-    
-    for(i=0 ; i<data.data.length ; i++){
-
-       let div = document.createElement('div')
-       div.style.margin = '5px 20px 50px'
        
-
-
-       email = document.createElement('p')
-       email.innerText = data.data[i].email
-       div.append(email)
-
-       id = document.createElement('p')
-       id.innerText = data.data[i].id
-       div.append(id)
-    
-       first_name = document.createElement('h1')
-       first_name.innerText = data.data[i].first_name
-       div.append(first_name) 
-
-       last_name = document.createElement('h2')
-       last_name.innerText = data.data[i].last_name
-       div.append(last_name)
-
-       avatar = document.createElement('img')
-       avatar.src = data.data[i].avatar
-       div.append(avatar)
-
-       cont.append(div)
-
-    }
-    
-
-})
-.catch((error)=>{
-    console.log('Errore ', error)
-    })
-
-

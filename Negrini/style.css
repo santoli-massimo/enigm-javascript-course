@@ -9,7 +9,14 @@ body{
     color: #4e4e4e;
 }
 
-a{
+#cardCont{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.card-link{
     text-decoration: none;
     color: #4e4e4e;
 }
@@ -17,3 +24,19 @@ a{
 a:hover{
     color: #6e6e6e;
 }
+
+.card {
+    width: 280px;
+    height: 430px;
+    background-color: white;
+    margin: 0px 16px  32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img{
+    width: 100%;
+    height: auto;
+}
+
+

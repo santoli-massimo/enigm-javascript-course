@@ -30,3 +30,39 @@ console.log("ENGIM FINAL TEST 2023");
 // Puoi ottenere punti anche se non completi al 100% una parte per cui consiglio di provare comunque.
 
 
+
+let container = document.getElementById("cardCont");
+let html=""
+
+fetch('https://reqres.in/api/users')
+    .then((response) => {
+        if (response.status === 200) {
+            return response.json()
+        } else {
+            console.log('ERROR')
+        }
+    })
+    .then((data) => {
+        console.log(data)
+        for (let i = 0; i < data.data.length; i++) {
+
+            html += `
+            <div class="card">
+                <h3 class="card-title">${data.data[i].first_name}</h3>
+                <p class="card-email">${data.data[i].email}</p>
+                <img src="${data.data[i].avatar}" class="card-img" alt="image not found">
+                <a href="mailto:${data.data[i].email}" class="card-link">Contact</a>
+            </div>
+            `
+        }
+        container.innerHTML=html
+    })
+    .catch((e) => {
+        console.log(e);
+    })
+    .finally(() => {
+        console.log('END');
+    })
+
+
+
