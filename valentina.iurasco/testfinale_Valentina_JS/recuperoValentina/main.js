@@ -30,3 +30,42 @@ console.log("ENGIM FINAL TEST 2023");
 // Puoi ottenere punti anche se non completi al 100% una parte per cui consiglio di provare comunque.
 
 
+const container = document.getElementById('container');
+fetch('https://reqres.in/api/users')
+    .then(response => response.json())
+    .then(data => {
+        const users = data.data;
+
+        //per ogni utente crea una card e aggiungila al contenitore
+        users.forEach(user=> {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const avatar = document.createElement('img');
+            avatar.src = user.avatar;
+            avatar.alt = `${user.first_name} ${user.last_name} avatar`;
+            card.appendChild(avatar);
+
+            const name = document.createElement('h1');
+            name.textContent = `${user.first_name} ${user.last_name}`;
+            card.appendChild(name);
+
+            const email = document.createElement('p');
+            email.textContent = user.email;
+            card.appendChild(email);
+
+            const contact = document.createElement('a')
+            contact.href= user.email;
+            contact.textContent=`contact`;
+            card.appendChild(contact);
+
+            container.appendChild(card);
+
+        });
+})
+.catch (error=> {
+            console.log(error);
+        });
+  
+
+       

@@ -9,14 +9,27 @@
     --card-selected: #78bcf8;
 }
 
+<<<<<<< HEAD
 
 body{
+=======
+html {
+    height: 100%;
+}
+body{
+    height: 100%;
+>>>>>>> 11023f2618b04e0c1b46102ec7c9bb9d7b75508b
     padding: 2rem;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     font-weight: 500;
     background: #eaeaea;
     color: var(--color-main);
+<<<<<<< HEAD
+=======
+    display: flex;
+    flex-direction: column;
+>>>>>>> 11023f2618b04e0c1b46102ec7c9bb9d7b75508b
 }
 
 a{
@@ -99,3 +112,17 @@ a:hover{
 .card.selected *{
     color: white;
 }
+<<<<<<< HEAD
+=======
+
+.flex {
+    display: flex;
+    justify-content: center;
+    margin: 2rem
+}
+
+.flex button {
+    padding: 1rem;
+    margin: 1rem;
+}
+>>>>>>> 11023f2618b04e0c1b46102ec7c9bb9d7b75508b

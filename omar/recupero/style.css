@@ -17,9 +17,7 @@ body{
     font-weight: 500;
     background: #eaeaea;
     color: var(--color-main);
- 
 }
-
 
 a{
     text-decoration: none;
@@ -30,7 +28,7 @@ a:hover{
 }
 
 .page-title{
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .container{
@@ -41,7 +39,7 @@ a:hover{
 
 .card{
     display: flex;
-    border-radius: 2px;
+    border-radius: 5px;
     background-color: #fff;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     overflow: hidden;
@@ -60,7 +58,7 @@ a:hover{
 }
 
 .card .info{
-    display: grid;
+    display: flex;
     flex-direction: column;
     padding: 1rem;
 }
@@ -95,7 +93,7 @@ a:hover{
 
 .card.selected{
     background: var(--card-selected);
-    box-shadow: 0px 7px 12px rgba(24, 23, 23, 0.5);
+    box-shadow: 0px 7px 12px rgba(0,0,0,0.5);
 }
 
 .card.selected *{

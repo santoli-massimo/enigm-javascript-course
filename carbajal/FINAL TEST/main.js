@@ -44,3 +44,28 @@ fetch ('https://reqres.in/api/users')
     .catch(function (error){
         console.log({error});
 })
+
+
+
+
+
+//
+let nome = 'pippo'
+
+let container = document.querySelector('.container')
+container.innerHTML = `
+    <<div class="card">
+    <div class="avatar">
+      <img src="https://pyxis.nymag.com/v1/imgs/bb2/701/c4787eccc4a76307518ae0632fb9196faa-rick-and-morty.rsquare.w700.jpg" alt="">
+    </div>
+    <div class="info">
+      <span class="name">Rick Sanchez</span>
+      <span class="email">rick.sanchez@gmail.com</span>
+      <div class="footer">
+        <a class="contact" href="mailto:rick.sanchez@gmail.com">Contact</a>
+      </div>
+    </div>
+  </div>
+`
+
+//
