@@ -35,3 +35,110 @@ console.log("ENGIM FINAL TEST 2023 (recupero)");
 // Puoi ottenere punti anche se non completi al 100% una parte per cui consiglio di provare comunque.
 
 
+//A1 richiesta e stampa dei dati
+let container = document.querySelector('.container')
+numeroPagina = 1
+let page = loadPage(numeroPagina)
+function loadPage(num){
+    fetch('https://reqres.in/api/users?page=' + num)
+    .then((response)=>{
+        if(response.status < 205)
+            return response.json()
+        throw Error
+    })
+    .then((data)=>{
+        console.log(data);
+        for(let i = 0; i< data.data.length; i++){
+            let card = scheda(data.data[i])
+            container.append(card)
+        }
+    })
+    .catch((error)=>{
+        console.log('Error ' + error);
+    })
+}
+
+
+//A2 card ed elaborazione dati
+function scheda(data){
+
+//generazione della card, suddvisa in due sezioni principali: l'immagine e i dati 
+//dati contiene nome (che al suo interno ha nome e cognome), la e-mail e il link contatta per il mailto, per semplicità viene unito tutto in un fragment
+let card  = document.createElement('div');
+let img = document.createElement('img');
+let dati = document.createElement('div');
+let nome = document.createElement('p');
+let mail = document.createElement('p');
+let fragment = document.createDocumentFragment()
+let contact = document.createElement("a");
+
+//append della struttura html
+card.append(img)
+card.append(dati)
+fragment.append(nome, mail, contact)
+dati.append(fragment)
+
+
+//assegnazione classi
+dati.classList = 'info'
+nome.classList = 'name'
+mail.classList = 'email'
+card.classList = 'card'
+img.classList = 'avatar'
+contact.classList = 'contact'
+
+//importazione dati 
+img.src =  data.avatar
+nome.textContent =  data.first_name + ' ' + data.last_name
+mail.textContent =  data.email
+contact.textContent = 'Contatta'
+
+//mailto (Parte B)
+contact.href = 'mailto:' + mail.textContent
+
+
+//PARTE E: funzione per selezionare e deselezionare la card
+card.onclick = function(){
+    if(card.classList.contains('selected')){
+        card.classList.remove("selected");
+    }else{
+        card.classList.add('selected');
+    }
+}    
+
+    return card
+}
+
+let div = document.createElement('div')
+let next = document.createElement('button')
+let back = document.createElement('button')
+div.classList = 'flex'
+
+next.textContent = 'Next'
+back.textContent = 'Back'
+document.body.append(div)
+
+div.append(back)
+div.append(next)
+
+//funzione per la pagina seguente
+next.onclick = function (){
+    container.innerHTML=''
+    if(numeroPagina == 2){  
+    }else{
+    numeroPagina++
+    }
+    loadPage(numeroPagina)
+}
+
+//funzione per la pagina precedente
+back.onclick = function (){ 
+    container.innerHTML=''
+    if(numeroPagina == 1){      
+    }else{
+    numeroPagina--
+    }
+    loadPage(numeroPagina)
+}
+
+    

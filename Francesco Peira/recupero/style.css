@@ -9,14 +9,19 @@
     --card-selected: #78bcf8;
 }
 
-
+html {
+    height: 100%;
+}
 body{
+    height: 100%;
     padding: 2rem;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     font-weight: 500;
     background: #eaeaea;
     color: var(--color-main);
+    display: flex;
+    flex-direction: column;
 }
 
 a{
@@ -98,4 +103,15 @@ a:hover{
 
 .card.selected *{
     color: white;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    margin: 2rem
+}
+
+.flex button {
+    padding: 1rem;
+    margin: 1rem;
 }
