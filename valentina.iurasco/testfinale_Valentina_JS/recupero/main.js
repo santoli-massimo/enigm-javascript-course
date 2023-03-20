@@ -1,4 +1,4 @@
-console.log("ENGIM FINAL TEST 2023");
+console.log("ENGIM FINAL TEST 2023 (recupero)");
 
 // OBBIETTIVO DEL TEST:
 // Creare un layout simile a quelo indicato nell immagine layout.png utilizzando i dati forniti dall api 'https://reqres.in/api/users'
@@ -9,8 +9,8 @@ console.log("ENGIM FINAL TEST 2023");
 
 // PARTE A2 (obbligatoria) (20 punti)
 // Utilizzando i dati ricevuti dal server nel punto precedente:
-// Per ogni utente ricevuto dal server, creare una card contenente un elemento per ogni proprietà dell'utente:
-// first_name, last_name, email, id, avatar
+// Per ogni utente ricevuto dal server, creare una card contenente un elemento per le seguenti proprietà dell'utente:
+// first_name, last_name, email, avatar
 
 // PARTE B (Facoltativa) (10 punti)
 // In ogni card creare un elemento cliccabile con un mailto che apra il mailer di default con l'email dell'utente preimpostata
@@ -18,10 +18,15 @@ console.log("ENGIM FINAL TEST 2023");
 
 // PARTE C (Facoltativa) (20 punti)
 // Ripodurre il layout presente nell immagine layout.png presente in questa directory
-// La scritta contact presente in ogni card deve essere cliccabile e eseguire il mailto con l email dell utente
+// Il bottone presente in ogni card deve essere cliccabile e eseguire il mailto con l email dell utente
 
 // Parte D (Facoltativa) (20 punti)
-// Creare una paginazione che permetta di visualizzare gli utenti successivi/precedenti utilizzando 2 bottoni
+// Creare una paginazione che permetta di visualizzare i 6 utenti successivi e precedenti utilizzando 2 bottoni
+
+// Parte E (Facoltativa) (20 punti)
+// Al click su una card, la card diventa selezionata e cambia sitle. Se si clicca su una card selezionata, la card torna allo stato iniziale.
+// al massimo ci puo essere una sola card selezionata per volta.
+// puoi utilizzare la classe .selected per gestire lo stato selezionato
 
 // NOTE:
 // IL massimo punteggio raggiungibile è: 100 punti.
@@ -46,7 +51,7 @@ fetch('https://reqres.in/api/users')
             avatar.alt = `${user.first_name} ${user.last_name} avatar`;
             card.appendChild(avatar);
 
-            const name = document.createElement('h1');
+            const info = document.createElement('h1');
             name.textContent = `${user.first_name} ${user.last_name}`;
             card.appendChild(name);
 
@@ -66,6 +71,3 @@ fetch('https://reqres.in/api/users')
 .catch (error=> {
             console.log(error);
         });
-  
-
-       
