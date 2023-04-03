@@ -55,7 +55,7 @@ fetch('https://reqres.in/api/users')
             card.appendChild(email);
 
             const contact = document.createElement('a')
-            contact.src= user.email;
+            contact.href= user.email;
             contact.textContent=`contact`;
             card.appendChild(contact);
 
